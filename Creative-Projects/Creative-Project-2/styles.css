@@ -1,0 +1,21 @@
+body{
+    background-image: url('images/background1.jpg') !important;
+    font-family: Verdana !important;
+}
+
+
+.displayDate {
+    font-family: Verdana !important;
+}
+
+#footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:rgb(207, 132, 75);
+    color: lightslategrey;
+    text-align: center;
+    margin-top: 2em;
+    padding: 3em;
+    position: absolute;
+  }

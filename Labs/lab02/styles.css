@@ -1,0 +1,26 @@
+body{
+    background-image: url('images/final_background.jpg') !important;
+    font-family: Verdana !important;
+    margin: 3em !important;
+}
+
+
+.row {
+    outline: 1px solid grey;
+}
+
+.displayDate {
+    font-family: Verdana !important;
+}
+
+#footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: lightblue;
+    color: lightslategrey;
+    text-align: center;
+    margin-top: 2em;
+    padding: 3em;
+    position: absolute;
+  }

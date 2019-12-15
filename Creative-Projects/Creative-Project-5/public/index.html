@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Financial Tracker</title>
+</head>
+
+<body>
+   <div id="page-container">
+   <div id="content-wrap">
+    <div id="big-title"> <h1>Financial Tracker</h1></div>
+  <div id="app" class="content">
+          <h1>All Money Flow</h1>
+   <div v-for="item in all">
+        <input type="checkbox" v-model="item.selected"> <em>{{item.date}}</em> <strong>{{item.title}}:</strong> ${{item.amount}}
+    </div>
+    <p></p>
+    
+    <button v-on:click="calcSelected()"> Calulate Selected </button>
+    <button v-on:click="calcTotal()"> Calulate Total</button>
+    <button v-on:click="organize()"> Organize Finances</button>
+    <p></p>
+
+
+
+    <div v-if="this.income.length">
+      <h2>Income</h2>
+    </div>
+
+    <div v-for="item in income">
+      <em>{{item.date}}</em> <strong>{{item.title}}:</strong> ${{item.amount}}    
+    </div>
+
+    <div v-if="this.outgoing.length">
+      <h2>Outgoing</h2>
+    </div>
+    
+    <div v-for="item in outgoing">
+      <em>{{item.date}}</em> <strong>{{item.title}}:</strong> ${{item.amount}}    
+    </div>
+
+    <div v-if="this.total != 0">
+      <h2>Total: ${{this.total}}</h2>
+    </div>
+    <div v-else-if="this.isCalulated">
+      <h2>Total: $0</h2>
+    </div>
+    
+
+    
+  </div>
+  
+  
+  <div class="bottom">
+    <a href="admin.html">Admin</a>
+  </div>
+  
+     </div>
+  <div id="footer">
+    <p>GitHub URL: <a href="https://github.com/Clotonervo/Creative-Project-5">https://github.com/Clotonervo/Creative-Project-5</p>
+  </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <title>Movie Browser</title>
+</head>
+
+<body>
+  <h1>Movie Browser</h1>
+  <div id="app">
+      <form v-on:submit.prevent="findMovie">
+        <input v-model="title" placeholder="Movie Title"></p>
+        <br />
+        <button type="submit">Search</button>
+      </form>
+    
+    <div v-if="movieFound">
+      <div v-if="loading">
+        <p>Loading...</p>
+      </div>
+      <div v-else>
+        <h2>{{current.Title}}</h2>
+        <img v-bind:src="current.Poster" v-bind:alt="current.Plot">
+        <p>{{current.Plot}}</p>
+        <p><i>Released on {{current.Released}}</i></p>
+        <p><b>Rating:</b> {{current.Rated}}</p>
+        
+          <div v-if="beginning">
+              <button v-on:click="nextMovie">Next</button>
+          </div>
+          <div v-else-if="end">
+              <button v-on:click="previousMovie">Previous</button>
+          </div>
+          <div v-else-if="multipleSearched">
+              <button v-on:click="previousMovie">Previous</button>
+              <button v-on:click="nextMovie">Next</button>
+          </div>
+        
+        <h3>Add a Comment</h3>
+        <form v-on:submit.prevent="addComment">
+          <input v-model="addedName" placeholder="Name"></p>
+          <textarea v-model="addedComment"></textarea>
+          <br />
+          <button type="submit">Comment</button>
+        </form>
+        <h3>Comments</h3>
+        <div v-for="comment in comments[index]">
+          <hr>
+          <p>{{comment.text}}</p>
+          <p><i>-- {{comment.author}}</i></p>
+          <p>{{comment.date}}</p>
+        </div>    </div>
+    </div>
+    <div v-else>
+      <p>Enter in a movie title to start!</p>
+    </div>
+  </div>
+
+  <footer>
+      <div id="footer">
+        <p>GitHub URL: <a href="https://github.com/Clotonervo/Creative-Project-3">https://github.com/Clotonervo/Creative-Project-3</p>
+        </div>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
+  <script src="moment-with-locales.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

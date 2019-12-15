@@ -1,0 +1,25 @@
+{
+  "name": "creative-project-5",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Clotonervo/Creative-Project-5.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Clotonervo/Creative-Project-5/issues"
+  },
+  "homepage": "https://github.com/Clotonervo/Creative-Project-5#readme",
+  "description": ""
+}

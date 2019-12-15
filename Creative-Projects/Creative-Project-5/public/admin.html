@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Financial Tracker</title>
+</head>
+
+<body>
+  <div id="admin" class="content">
+     <h1>Store Management Interface</h1>
+    <div class="add">
+      <div class="form">
+        Note <input v-model="title">
+        <p></p>
+        Amount <input v-model="amount">
+         <p></p>
+        Income <input type="checkbox" v-model="income"/>
+        <p></p>
+        <button @click="upload">Add Product</button>
+      </div>
+    </div>
+
+    <h2>Current Moneyflow</h2>
+  
+   <div v-for="item in items">
+        <em>{{item.date}}</em> <strong>{{item.title}}</strong>: ${{item.amount}}
+        <button @click="deleteItem(item)">Remove Item</button>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <a href="index.html">Back to Structured View</a>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+  <script src="/admin.js"></script>
+</body>
+
+</html>
