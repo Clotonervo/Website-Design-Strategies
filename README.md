@@ -1,1 +1,1 @@
-All course work for CS 260: Web Programming BYU Fall semester 2019
+Multiple website designs. Focusing on web design best practices and learning newer concepts each iteration. These are a collection of the different websites I created while learning web APIs and javascript frameworks
